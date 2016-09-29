@@ -1,2 +1,19 @@
-<html>
+<html><head></head><body>
+  <script>
+    var transformer = function(I,Ep,Es,Np) {
+    	var Ns = (Np*Es)/Ep;
+    	var iVolts = ["Input Voltage: ",(Es*Np)/Ns];
+    	var oVolts = ["Output Voltage: ",(Ep*Ns)/Np];
+    	var iAmps = ["Input Amperage: ", I];
+    	var oAmps = ["Output Amperage: ", (Np*I)/Ns];
+      
+      return iVolts;
+    }
+  </script>
+  
+      <div><font>Input Current (Amperes):</font><input id="jesse"></div>
+      <div><font>Input Voltage:</font><input id="jesse1"></div>
+      <div><font>Output Voltage:</font><input id="jesse2"></div>
+    <button onclick="alert(transformer(document.getElementById('jesse').value,document.getElementById('jesse1').value,document.getElementById('jesse2').value,5))">Calculate!</button>
+  </body>
 </html>
